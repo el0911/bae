@@ -1,0 +1,71 @@
+<!--
+  Generated template for the ServiceguyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Service Provider</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+   
+        <ion-item>
+            <ion-label floating>Business name</ion-label>
+            <ion-input type="text" #name></ion-input>
+          </ion-item>
+  
+
+          <ion-item>
+              <ion-label floating>Email Contact</ion-label>
+              <ion-input type="email" #email></ion-input>
+            </ion-item>
+    
+
+            <ion-item>
+                <ion-label floating>password</ion-label>
+                <ion-input type="password" #password></ion-input>
+              </ion-item>
+
+
+              <ion-item>
+                  <ion-label floating>number</ion-label>
+                  <ion-input type="number" #number></ion-input>
+                </ion-item>
+
+
+              <ion-item class="smallmargin">
+                  <ion-label>Category</ion-label>
+                  <ion-select #category interface="action-sheet">
+                    <ion-option>Fashion</ion-option>
+                    <ion-option>PhotoGraphy</ion-option>
+                    <ion-option>Repairs</ion-option>
+                    <ion-option>Clothing</ion-option>
+                    <ion-option>Graphic design</ion-option>
+                    <ion-option>make up</ion-option>
+                    <ion-option>web design</ion-option>
+                     
+                  </ion-select>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label floating>description of your business</ion-label>
+                  <ion-input type="text" #short></ion-input>
+                </ion-item>
+      
+                <div padding>
+                    <button block ion-button (click)="registerUser()" item-left>Sign Up</button>
+                  </div>
+
+
+     
+   
+
+</ion-content>

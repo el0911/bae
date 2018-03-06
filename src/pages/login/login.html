@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <!-- <ion-list> -->
+
+  
+<div class='lightmargin' >
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input type="text" #username></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" #password></ion-input>
+  </ion-item>
+  
+<!-- </ion-list> -->
+
+<div padding>
+  <button block ion-button (click)="signinuser()" item-left>Sign In</button>
+</div>
+
+
+<p class='center'>or already have an account? <a (click) ='gotosignup()'>Sign Up</a></p>
+
+<p class='center'> <a  (click)='gototservice()' >
+    Register as a service provider
+</a> 
+</p>
+</div>
+
+
+<style>
+  page-login {
+background: url('ba.jpg')
+}
+
+
+.content-ios{
+    background-color:transparent 
+}
+
+
+.content-md{
+    background-color:transparent 
+}
+
+</style>
+
+</ion-content>

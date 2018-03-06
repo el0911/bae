@@ -1,0 +1,28 @@
+<!--
+  Generated template for the ViewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>view</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <p >{{ (item | async)?.name }}</p>
+    <ion-icon class="bigimage" name="contact"></ion-icon>
+    <p >{{ (item | async)?.number }}</p>
+    <p >{{ (item | async)?.email }}</p>
+    <p >{{ (item | async)?.rating }}  star</p>
+  
+
+    <p  class='left textleft'  >{{ (item | async)?.short }}  star</p>
+  
+
+</ion-content>

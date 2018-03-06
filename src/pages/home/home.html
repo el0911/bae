@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-navbar>
+      <ion-buttons start>
+          <button ion-button icon-only>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+
+
+<p>
+  Categories
+</p>
+
+
+<ion-grid>
+  <ion-row>
+    <ion-col (click)='moveto("clothing")'> 
+      <div class='div'>
+        <ion-icon name="shirt"></ion-icon>
+        <p>  clothing
+        </p>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class='div' (click)='moveto("photoshoot")' >
+        <ion-icon name="camera"></ion-icon>
+        <p>Photography</p>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class='div'  (click)='moveto("hammer")'>
+        <ion-icon name="hammer"></ion-icon>
+        <p>Repairs</p>
+      </div>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row id="middleguy">
+    
+    <ion-col>
+      <div class='div' (click)='moveto("design")' >
+        <ion-icon name="desktop"></ion-icon>
+        <p>Graphic design</p>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class='div' (click)='moveto("Electronics")' >
+        <ion-icon name="laptop"></ion-icon>
+        <p>Electronics</p>
+      </div>
+    </ion-col>
+
+    <ion-col>
+      <div class='div' (click)='moveto("Paistries")' >
+        <ion-icon name="restaurant"></ion-icon>
+        <p>Paistries</p>
+      </div>
+    </ion-col>
+
+  </ion-row>
+
+
+
+  <ion-row>
+    <ion-col>
+      <div class='div' (click)='moveto("Makeup")' >
+        <ion-icon name="color-palette"></ion-icon>
+        <p>Make up</p>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class='div'  (click)='moveto("webdesign")'>
+        <ion-icon name="code-working"></ion-icon>
+        <p>Web design</p>
+      </div>
+    </ion-col>
+ 
+  </ion-row>
+
+
+
+
+</ion-grid>
+
+</ion-content>
