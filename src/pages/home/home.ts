@@ -30,7 +30,7 @@ export class HomePage {
 
       var g= this.af.object('profile/'+this.fire.auth.currentUser.uid)
       this.item =  g.valueChanges();
-  
+      
       g.snapshotChanges().subscribe(action => {
         console.log(action.type);
         console.log(action.key)
