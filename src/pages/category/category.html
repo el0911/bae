@@ -18,8 +18,9 @@
 
   <ion-list no-lines>
 
-        <ion-card ion-item *ngFor="let item of shoppingListRef$  | async"  > 
-            <img src=''/>
+        <ion-card ion-item *ngFor="let item of (shoppingListRef$  | async)?.slice().reverse()"   > 
+            
+          <div *ngIf='item.cat==catstuff'>
             <ion-card-content  (click)='next(item.personID)'>
               <ion-card-title>
                   {{item.name}}
@@ -27,8 +28,8 @@
               <p>
                 {{item.short}}
               </p>
-
-              <div class='itemsd'>
+  
+              <div class='itemsd'> 
                 <p class='left'>
                   By {{item.person}}
                 </p>
@@ -42,6 +43,7 @@
 
             </ion-card-content>
             <ion-icon (click)='highfive(item)' name="hand"></ion-icon>
+          </div>
 
           </ion-card>
           

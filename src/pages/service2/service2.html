@@ -32,6 +32,8 @@
         <ion-col class='cardRestaurant' *ngFor="let item of items$ | async;">
           <ion-card >
             <!-- <img [src]="'assets/images/'+ restaurant.imagee"  class="imgCardMain" /> -->
+            <img src='{{item.img}}'/>
+           
             <ion-card-content>
               <ion-card-title>
                 <span class="textCardRestaurant">{{ item.name }}</span>

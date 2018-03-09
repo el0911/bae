@@ -25,10 +25,11 @@ import { Observable } from 'rxjs/Observable';
 export class CategoryPage {
 
   shoppingListRef$: Observable<any[]>;
+  catstuff:any
 
   constructor(private database: AngularFireDatabase, public navParams: NavParams, public navCtrl: NavController) {
-    this.shoppingListRef$ = this.database.list('categories/', ref => ref.orderByChild('cat').equalTo(navParams.get('data'))).valueChanges();;
-
+    this.shoppingListRef$ = this.database.list('categories/', ref => ref.orderByChild('clap')).valueChanges();;
+    this.catstuff=navParams.get('data')
   }
 
   ionViewDidLoad() {
@@ -43,9 +44,9 @@ export class CategoryPage {
 
 
   highfive(x) {
-
+    console.log(x)
     this.database.object(`categories/` + x.name).update({
-      clap: x.claps + 1
+      clap: x.clap + 1
     }).then(res => {
       console.log(res)
     })
