@@ -25,15 +25,18 @@ export class Service2Page {
 
   items$: Observable<any[]>;
   user: Observable<any>;
+  ifer:any
 
   constructor(private database: AngularFireDatabase,public navParams: NavParams,public navCtrl: NavController,private auth:AngularFireAuth) {
      var vawr =''
     //  alert(navParams.get('data'))
+    this.ifer=false
     if (navParams.get('data')) {
            vawr=navParams.get('data')
    }
     else{
       vawr=this.auth.auth.currentUser.uid
+      this.ifer=true
     }
        this.items$ = this.database.list('categories/',ref=>ref.orderByChild('personID').equalTo(vawr)).valueChanges();;
           this.user =this.database.object('/profile/'+vawr).valueChanges();
