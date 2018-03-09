@@ -18,9 +18,9 @@
 
   <ion-list no-lines>
 
-        <ion-card ion-item *ngFor="let item of shoppingListRef$  | async"  (click)='next(item.personID)'> 
+        <ion-card ion-item *ngFor="let item of shoppingListRef$  | async"  > 
             <img src=''/>
-            <ion-card-content>
+            <ion-card-content  (click)='next(item.personID)'>
               <ion-card-title>
                   {{item.name}}
                 </ion-card-title>
@@ -32,12 +32,17 @@
                 <p class='left'>
                   By {{item.person}}
                 </p>
+
+<!-- high five -->
+
                 <p class="right">
                   price: ${{item.price}}
                 </p>
               </div>
 
             </ion-card-content>
+            <ion-icon (click)='highfive(item)' name="hand"></ion-icon>
+
           </ion-card>
           
   </ion-list>

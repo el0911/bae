@@ -48,6 +48,7 @@ export class ServiceguyPage {
         this.updateuser(data.user)
       }
     ).catch(error=>{
+      alert(error.message)
       console.log('got an error',error)
     })
   }
