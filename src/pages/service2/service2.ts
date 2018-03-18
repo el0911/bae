@@ -4,10 +4,16 @@ import { AngularFireAuth } from 'angularfire2/auth'
 import {  FirebaseListObservable } from "angularfire2/database-deprecated";
 import { TabsPage} from '../tabs/tabs'
 import { ViewPage} from '../view/view'
+import { Storage } from '@ionic/storage';
+
 
 import {  AngularFireDatabaseModule,AngularFireDatabase,AngularFireList} from 'angularfire2/database';
 import {listitems}  from '../../models/listitems.interface'
 import { Observable } from 'rxjs/Observable';
+import { MessagePage } from "../message/message";
+
+import { LPage}  from '../l/l'
+
  
 /**
  * Generated class for the Service2Page page.
@@ -27,7 +33,7 @@ export class Service2Page {
   user: Observable<any>;
   ifer:any
 
-  constructor(private database: AngularFireDatabase,public navParams: NavParams,public navCtrl: NavController,private auth:AngularFireAuth) {
+  constructor(private database: AngularFireDatabase,public navParams: NavParams,public navCtrl: NavController,private auth:AngularFireAuth,private storage: Storage) {
      var vawr =''
     //  alert(navParams.get('data'))
     this.ifer=false
@@ -52,5 +58,24 @@ export class Service2Page {
     })
 }
   
+
+gotomessage(x) {
+  // alert
+  this.storage.get('name').then((val) => {
+  if (val=='not') {
+    this.navCtrl.push(MessagePage, {
+      data:  this.navParams.get('data')
+    })
+
+  }
+  else{
+    this.navCtrl.push(LPage, {
+      s:  this.navParams.get('data')
+    })
+  }
+  });
+  
+}
+
  
 }

@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>messages</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <div>
+   <div  *ngFor="let item of (s  | async)"  >
+      <div  (click)= 'next(item.uid)'>
+          <p>{{item.uid}}</p>
+      </div>
+   </div>
+  </div>
+
+
+  <!-- <ion-footer>
+      <ion-toolbar >
+          <ion-input type="text" #message   ></ion-input>
+          <button (click)='send()' ion-button icon-only ><ion-icon name='send'></ion-icon></button>
+      </ion-toolbar>
+  </ion-footer> -->
+
+</ion-content>

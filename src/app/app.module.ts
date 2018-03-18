@@ -12,13 +12,20 @@ import { LoginPage} from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { ViewPage} from '../pages/view/view';
 
+import { LPage}  from '../pages/l/l'
+import { MessagePage} from '../pages/message/message';
+
 import {MenuPage} from '../pages/menu/menu';
+import {Camera, CameraOptions} from "@ionic-native/camera"
+
 import { StatusBar } from '@ionic-native/status-bar';
 import {CategoryPage} from '../pages/category/category';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ServiceguyPage } from '../pages/serviceguy/serviceguy';
 import {  FirebaseListObservable } from "angularfire2/database-deprecated";
 import { Service2Page } from '../pages/service2/service2';
+import { IonicStorageModule } from '@ionic/storage';
+import { UploadPage  } from "../pages/upload/upload";
 
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 
@@ -41,31 +48,40 @@ const firebaseauth = {
     AboutPage,
     SettingsPage,
     LoginPage,
+    
     Service2Page,
+    LPage,
     RegisterPage,
     ServiceguyPage,
+    UploadPage,
     ViewPage,
     ContactPage,
     MenuPage,
+    MessagePage,
     CategoryPage,
     HomePage,
     TabsPage
   ],
   imports: [
     BrowserModule,
+    BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseauth),
     AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    MessagePage,
     AboutPage,
     Service2Page,
     ContactPage,
     HomePage,
+    LPage,
     MenuPage,
     ServiceguyPage,
+    UploadPage,
     CategoryPage,
     SettingsPage,
     ViewPage,
@@ -77,6 +93,7 @@ const firebaseauth = {
     StatusBar,
     AngularFireDatabase,
     AngularFireDatabaseModule,
+    Camera,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

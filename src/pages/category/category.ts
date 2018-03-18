@@ -11,10 +11,7 @@ import { listitems } from '../../models/listitems.interface'
 import { Observable } from 'rxjs/Observable';
 
 /**
- * Generated class for the CategoryPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+ * 
  */
 @IonicPage()
 @Component({
@@ -43,6 +40,7 @@ export class CategoryPage {
   }
 
 
+
   highfive(x) {
     console.log(x)
     this.database.object(`categories/` + x.name).update({
@@ -51,7 +49,4 @@ export class CategoryPage {
       console.log(res)
     })
   }
-
-
-
 }

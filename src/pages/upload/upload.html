@@ -1,5 +1,5 @@
 <!--
-  Generated template for the UploadPage page.
+  Generated template for the ServiceguyPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,12 +7,64 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>upload</ion-title>
+    <ion-title>Upload</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+
+   
+        <ion-item>
+            <ion-label floating>Item name</ion-label>
+            <ion-input type="text" #name></ion-input>
+          </ion-item>
+  
+
+          <ion-item>
+              <ion-label floating>Price</ion-label>
+              <ion-input type="number" #price></ion-input>
+            </ion-item>
+    
+
+            <!-- <ion-item>
+                <ion-label floating>password</ion-label>
+                <ion-input type="password" #password></ion-input>
+              </ion-item> -->
+
+
+
+              <ion-item class="smallmargin">
+                  <ion-label>Category</ion-label>
+                  <ion-select #category interface="action-sheet">
+                    <ion-option>Fashion</ion-option>
+                    <ion-option>PhotoGraphy</ion-option>
+                    <ion-option>Repairs</ion-option>
+                    <ion-option>Clothing</ion-option>
+                    <ion-option>Graphic design</ion-option>
+                    <ion-option>make up</ion-option>
+                    <ion-option>web design</ion-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label floating>description of your item</ion-label>
+                  <ion-input type="text" #short></ion-input>
+                </ion-item>
+      
+                <div padding>
+                    <button ion-button (click)= 'takephoto()' block ion-button (click)="up()" item-left>Takephoto</button>
+                  </div>
+
+
+                  <div padding>
+                    <button block ion-button (click)="up()" item-left>Upload</button>
+                  </div>
+
+
+     
+   
 
 </ion-content>
