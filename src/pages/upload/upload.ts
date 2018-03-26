@@ -90,7 +90,7 @@ export class UploadPage {
         "name": this.name.value,
         'cat': this.category.value,
         'person': val,
-        'img': this.uploadimg,
+        // 'img': 'https://firebasestorage.googleapis.com/v0/b/bae-855d5.appspot.com/o/f4c80b96-a7c7-40d6-9921-0993e64225c9_1.4a3830f6dfd8c36c0b21b2d1fdad2261.jpeg?alt=media&token=0766664e-ccc3-475e-9ebb-cbb979e4a99f',
         'personID': this.fire.auth.currentUser.uid,
         'price': this.price.value,
         'short': this.short.value

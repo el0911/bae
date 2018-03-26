@@ -18,6 +18,7 @@ import { Storage } from '@ionic/storage';
 export class HomePage {
 
   profiledata:any
+  name:any
   item: Observable<any>;
 
   constructor(private fire:AngularFireAuth,private af:AngularFireDatabase,public navCtrl: NavController,private storage: Storage) {
@@ -30,23 +31,23 @@ export class HomePage {
       //   this.navCtrl.setRoot(Service2Page)
       // } 
 
-      storage.set('name', 'not');
+        storage.set('name', 'not');
+        this.name =' '
 
-
-      var g= this.af.object('profile/'+this.fire.auth.currentUser.uid)
-      this.item =  g.valueChanges();
+        var g= this.af.object('profile/'+this.fire.auth.currentUser.uid)
+        this.item =  g.valueChanges();
       
-      g.snapshotChanges().subscribe(action => {
+        g.snapshotChanges().subscribe(action => {
         console.log(action.type);
         console.log(action.key)
         console.log(action.payload.val())
         storage.set('username',action.payload.val().name );
+        this.name=action.payload.val().name
         if (action.payload.val().category) {
           //seller direct to uploag
           if (action.payload.val().category.length>0) {
             //seller direct to uploag
-            storage.set('name', 'provider');
-           
+                    storage.set('name', 'provider');
                     this.navCtrl.setRoot(Service2Page)
           }
         }

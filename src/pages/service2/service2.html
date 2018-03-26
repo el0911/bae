@@ -35,25 +35,32 @@
       
       
       <!-- <button ?></button>></button> -->
-      
-      <ion-list>
-      <ion-grid>
-            <ion-row>
-              <ion-col class='cardRestaurant' *ngFor="let item of items$ | async;">
-                <ion-card >
-                  <!-- <img [src]="'assets/images/'+ restaurant.imagee"  class="imgCardMain" /> -->
-                  <img src='{{item.img}}'/>
-                 
-                  <ion-card-content>
-                    <ion-card-title>
-                      <span class="textCardRestaurant">{{ item.name }}</span>
-                       <span class="sousTextCardRestaurant">  ${{ item.price }}€</span>
-                       </ion-card-title>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-list>
-      
+ 
+      <div style="display:inline-block"> 
+          <div class='cardRestaurant' *ngFor="let item of items$ | async;">
+              <ion-card >
+                <!-- <img [src]="'assets/images/'+ restaurant.imagee"  class="imgCardMain" /> -->
+                <img src='{{item.img}}'/>
+               
+                <ion-card-content>
+                  <ion-card-title>
+                    <p>{{item.name}}</p> <p>${{item.price}}</p>
+                      </ion-card-title>
+                </ion-card-content>
+              </ion-card>
+            </div>
+      </div>
+           
+        <style>
+          .card-md{
+            width: 26%;
+            float: left;
+            height: 200px;
+            margin:8px;
+          }
+
+          .cardRestaurant{
+
+          }
+        </style>
       </ion-content>
