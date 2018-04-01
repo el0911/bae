@@ -6,6 +6,7 @@ import { TabsPage} from '../tabs/tabs'
 import { ViewPage} from '../view/view'
 import { Storage } from '@ionic/storage';
 
+import { ActionSheetController } from 'ionic-angular'
 
 import {  AngularFireDatabaseModule,AngularFireDatabase,AngularFireList} from 'angularfire2/database';
 import {listitems}  from '../../models/listitems.interface'
@@ -33,7 +34,7 @@ export class Service2Page {
   user: Observable<any>;
   ifer:any
 
-  constructor(private database: AngularFireDatabase,public navParams: NavParams,public navCtrl: NavController,private auth:AngularFireAuth,private storage: Storage) {
+  constructor(public actionSheetCtrl: ActionSheetController,private database: AngularFireDatabase,public navParams: NavParams,public navCtrl: NavController,private auth:AngularFireAuth,private storage: Storage) {
      var vawr =''
     //  alert(navParams.get('data'))
     this.ifer=false
@@ -58,6 +59,13 @@ export class Service2Page {
     })
 }
   
+moveto(x){
+  this.navCtrl.push(ViewPage,{
+    data:x
+  })
+}
+
+
 
 gotomessage(x) {
   // alert
@@ -77,5 +85,36 @@ gotomessage(x) {
   
 }
 
- 
+
+presentActionSheet(x) {
+  let actionSheet = this.actionSheetCtrl.create({
+    title: x.name,
+    buttons: [
+      {
+        text: 'delete',
+         handler: () => {
+           alert(x.key)
+          this.database.list('categories/'+x.key).remove()
+        }
+      },
+      {
+        text: 'view',
+        handler: () => {
+          this.moveto(x)
+        }
+      },
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }
+    ]
+  });
+
+  actionSheet.present();
+}
+
+
 }

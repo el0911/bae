@@ -45,7 +45,7 @@ export class HomePage {
         this.name=action.payload.val().name
         if (action.payload.val().category) {
           //seller direct to uploag
-          if (action.payload.val().category.length>0) {
+          if (action.payload.val().cat.length>0) {
             //seller direct to uploag
                     storage.set('name', 'provider');
                     this.navCtrl.setRoot(Service2Page)

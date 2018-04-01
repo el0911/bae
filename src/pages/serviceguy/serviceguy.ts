@@ -71,7 +71,7 @@ export class ServiceguyPage {
     photoURL:'08039965865'
   })
   this.af.object('profile/'+user.uid).set({
-    category:this.category.value,
+    cat:this.category.value,
     short:this.short.value, 
     name:this.name.value,
     email:this.email.value,

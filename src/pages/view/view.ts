@@ -25,19 +25,22 @@ import { Observable } from 'rxjs/Observable';
 export class ViewPage {
 
   
+
   
 
-  item:  Observable<any>;
+  item:  any;
   constructor(private database: AngularFireDatabase,public navParams: NavParams,public navCtrl: NavController) {
-    var g= this.database.object('profile/'+navParams.get('data'))
-    this.item =  g.valueChanges();
+    // var g= this.database.object('profile/'+navParams.get('data'))
+    // this.item =  g.valueChanges();
 
-    g.snapshotChanges().subscribe(action => {
-      console.log(action.type);
-      console.log(action.key)
-      console.log(action.payload.val())
-    });
+    // g.snapshotChanges().subscribe(action => {
+    //   console.log(action.type);
+    //   console.log(action.key)
+    //   console.log(action.payload.val())
+    // });
     
+
+    this.item= navParams.get('data')
   }
 
   ionViewDidLoad() {

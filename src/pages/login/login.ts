@@ -65,5 +65,36 @@ export class LoginPage {
     
   }
 
+  resetPassword(email: string): Promise<void> {
+    return this.fire.auth.sendPasswordResetEmail(email);
+  }
+
+  forgotpassword() {
+    let alert = this.alertCtrl.create({
+      title: 'forgotten password',
+      inputs: [
+       {
+          name: 'email',
+          placeholder: 'email',
+         }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'reset',
+          handler: data => {
+            this.resetPassword(data.email)
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
 
 }

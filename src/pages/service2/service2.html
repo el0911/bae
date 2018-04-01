@@ -37,7 +37,7 @@
       <!-- <button ?></button>></button> -->
  
       <div style="display:inline-block"> 
-          <div class='cardRestaurant' *ngFor="let item of items$ | async;">
+          <div class='cardRestaurant' *ngFor="let item of items$ | async;" (click)='presentActionSheet(item)' >
               <ion-card >
                 <!-- <img [src]="'assets/images/'+ restaurant.imagee"  class="imgCardMain" /> -->
                 <img src='{{item.img}}'/>

@@ -25,8 +25,10 @@ export class CategoryPage {
   catstuff:any
 
   constructor(private database: AngularFireDatabase, public navParams: NavParams, public navCtrl: NavController) {
-    this.shoppingListRef$ = this.database.list('categories/', ref => ref.orderByChild('clap')).valueChanges();;
     this.catstuff=navParams.get('data')
+    // alert(this.catstuff)
+    this.shoppingListRef$ = this.database.list('profile/', ref => ref.orderByChild('cat').equalTo(this.catstuff)).valueChanges();;
+    console.log(this.shoppingListRef$)
   }
 
   ionViewDidLoad() {

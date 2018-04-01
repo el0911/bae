@@ -82,30 +82,39 @@ export class UploadPage {
   }
 
   up() {
-    this.storage.get('username').then((val) => {
+ 
+        if(1==1){
+          if (1==1) {
+            this.storage.get('username').then((val) => {
 
-      this.database.list('/categories/').push({
+              let key =      this.database.list('/categories/').push({
+        
+                'clap': 0,
+                "name": this.name.value,
+                'cat': this.category.value,
+                'person': val,
+                // 'img': this.uploadimg,
+                'personID': this.fire.auth.currentUser.uid,
+                'price': this.price.value,
+                'short': this.short.value
+        
+              }).key
+        
+              this.database.object('/categories/'+key).update({
+                'key':key
+              })
 
-        'clap': 0,
-        "name": this.name.value,
-        'cat': this.category.value,
-        'person': val,
-        // 'img': 'https://firebasestorage.googleapis.com/v0/b/bae-855d5.appspot.com/o/f4c80b96-a7c7-40d6-9921-0993e64225c9_1.4a3830f6dfd8c36c0b21b2d1fdad2261.jpeg?alt=media&token=0766664e-ccc3-475e-9ebb-cbb979e4a99f',
-        'personID': this.fire.auth.currentUser.uid,
-        'price': this.price.value,
-        'short': this.short.value
+              let alert = this.alertCtrl.create({
+                title: 'New post uploaded',
+                subTitle: 'Now can be seen in timeline',
+                buttons: ['OK']
+              });
+              alert.present();
+            
+            })
+          }
+        }
 
-      })
-
-
-      let alert = this.alertCtrl.create({
-        title: 'New post uploaded',
-        subTitle: 'Now can be seen in timeline',
-        buttons: ['OK']
-      });
-      alert.present();
-    
-    })
   }
 
 }

@@ -11,6 +11,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { LoginPage} from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { ViewPage} from '../pages/view/view';
+// import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 
 import { LPage}  from '../pages/l/l'
 import { MessagePage} from '../pages/message/message';
@@ -28,6 +29,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { UploadPage  } from "../pages/upload/upload";
 
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
+import { File } from '@ionic-native/File';
 
 
 import { AngularFireModule } from 'angularfire2';
@@ -92,6 +94,8 @@ const firebaseauth = {
   providers: [
     StatusBar,
     AngularFireDatabase,
+    // AngularFireStorage,
+    File,
     AngularFireDatabaseModule,
     Camera,
     SplashScreen,

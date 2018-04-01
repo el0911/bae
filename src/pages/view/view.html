@@ -15,14 +15,14 @@
 
 <ion-content padding>
 
-    <p >{{ (item | async)?.name }}</p>
-    <ion-icon class="bigimage" name="contact"></ion-icon>
-    <p >{{ (item | async)?.number }}</p>
-    <p >{{ (item | async)?.email }}</p>
-    <p >{{ (item | async)?.rating }}  star</p>
+    <p >{{ item.name }}</p>
+    <img src='{{item.img}}'/>
+    <p >{{ item.number }}</p>
+    <p >{{ item?.email }}</p>
+    <p >${{ item.price }}</p>
   
 
-    <p  class='left textleft'  >{{ (item | async)?.short }}  star</p>
+    <p  class='left textleft'  >{{item.short }}  star</p>
   
 
 </ion-content>
