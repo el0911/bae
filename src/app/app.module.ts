@@ -40,7 +40,7 @@ const firebaseauth = {
   authDomain: "bae-855d5.firebaseapp.com",
   databaseURL: "https://bae-855d5.firebaseio.com",
   projectId: "bae-855d5",
-  storageBucket: "",
+  storageBucket: "gs://bae-855d5.appspot.com/",
   messagingSenderId: "878816445628"
 }
 

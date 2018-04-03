@@ -26,10 +26,11 @@
           <ion-input #password type="password"></ion-input>
         </ion-item>
       
+        <!-- <img src="{{img}}" alt=""> -->
 
 
         <div padding>
-          <button block ion-button (click)="getimage()" item-left>Upload picture</button>
+          <button *ngIf='shower' block ion-button (click)="getimage()" item-left>Upload profile  picture</button>
           <button block ion-button (click)="change()" item-left>Change password</button>
           <button block ion-button (click)="logout()" item-left>Logout</button>
         </div>

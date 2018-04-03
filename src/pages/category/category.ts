@@ -42,13 +42,4 @@ export class CategoryPage {
   }
 
 
-
-  highfive(x) {
-    console.log(x)
-    this.database.object(`categories/` + x.name).update({
-      clap: x.clap + 1
-    }).then(res => {
-      console.log(res)
-    })
-  }
 }

@@ -22,7 +22,7 @@
       
       <ion-content padding>
       
-      <img src="assets/imgs/ba.jpg" class="imgshit left" alt="">
+      <img src="{{ (user | async)?.img }}" alt="assets/imgs/ba.jpg" class="imgshit left" alt="">
       
         <div >
           <p  >{{ (user | async)?.name }}</p>
@@ -44,6 +44,7 @@
                
                 <ion-card-content>
                   <ion-card-title>
+                    <p style="display:hidden">{{item.clap}}</p>
                     <p>{{item.name}}</p> <p>${{item.price}}</p>
                       </ion-card-title>
                 </ion-card-content>

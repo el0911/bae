@@ -21,7 +21,7 @@
         <ion-card ion-item *ngFor="let item of (shoppingListRef$  | async)?.slice().reverse()"   > 
             
           <div *ngIf='item.cat==catstuff'>
-              <img src="assets/imgs/ba.jpg" class="imgshit left" alt="">
+              <img  src="{{item.img}}" alt="assets/imgs/ba.jpg" class="imgshit left" alt="">
 
             <ion-card-content  (click)='next(item.personid)'>
               <ion-card-title>
