@@ -31,7 +31,7 @@ import { LPage}  from '../l/l'
 export class Service2Page {
 
   items$: Observable<any[]>;
-  user: Observable<any>;
+  user:any;
   ifer:any
 
   constructor(public actionSheetCtrl: ActionSheetController,private database: AngularFireDatabase,public navParams: NavParams,public navCtrl: NavController,private auth:AngularFireAuth,private storage: Storage) {
@@ -39,14 +39,18 @@ export class Service2Page {
     //  alert(navParams.get('data'))
     this.ifer=false
     if (navParams.get('data')) {
-           vawr=navParams.get('data')
+          //  vawr=navParams.get('data')
+          // alert(navParams.get('data').name)
+           this.items$ = this.database.list('categories/',ref=>ref.orderByChild('person').equalTo(navParams.get('data').name)).valueChanges();;
+            this.user = navParams.get('data')
    }
     else{
       vawr=this.auth.auth.currentUser.uid
       this.ifer=true
+      this.items$ = this.database.list('categories/',ref=>ref.orderByChild('personID').equalTo(vawr)).valueChanges();;
+      this.user =this.database.object('/profile/'+vawr).valueChanges();
     }
-       this.items$ = this.database.list('categories/',ref=>ref.orderByChild('personID').equalTo(vawr)).valueChanges();;
-          this.user =this.database.object('/profile/'+vawr).valueChanges();
+       
   }
 
   ionViewDidLoad() {

@@ -5,7 +5,6 @@ import { Nav } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth'
  // import this, duh
 import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import {CategoryPage} from '../pages/category/category';
 import {Service2Page} from '../pages/service2/service2';
 
@@ -30,7 +29,7 @@ export class MyApp {
   email:String
   number:String
 
-  constructor(public platform: Platform, private fire:AngularFireAuth, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, private fire:AngularFireAuth, public statusBar: StatusBar) {
     this.initializeApp();
 
     // used for an e xample of ngFor and navigation
@@ -46,7 +45,7 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      // this.splashScreen.hide();
     });
   }
 

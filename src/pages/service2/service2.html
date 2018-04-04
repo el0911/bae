@@ -22,15 +22,15 @@
       
       <ion-content padding>
       
-      <img src="{{ (user | async)?.img }}" alt="assets/imgs/ba.jpg" class="imgshit left" alt="">
+      <img src="{{user.img}}" alt="assets/imgs/ba.jpg" class="imgshit left" alt="">
       
         <div >
-          <p  >{{ (user | async)?.name }}</p>
-          <p >{{ (user | async)?.email }}</p>
+          <p  >{{user.name}}</p>
+          <p >{{user.email}}</p>
         </div>
       
       <p class='left'>
-          {{ (user | async)?.short }}  
+          {{user.short }}  
       </p>
       
       

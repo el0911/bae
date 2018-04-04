@@ -21,7 +21,6 @@ import {Camera, CameraOptions} from "@ionic-native/camera"
 
 import { StatusBar } from '@ionic-native/status-bar';
 import {CategoryPage} from '../pages/category/category';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { ServiceguyPage } from '../pages/serviceguy/serviceguy';
 import {  FirebaseListObservable } from "angularfire2/database-deprecated";
 import { Service2Page } from '../pages/service2/service2';
@@ -98,7 +97,6 @@ const firebaseauth = {
     File,
     AngularFireDatabaseModule,
     Camera,
-    SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
