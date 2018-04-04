@@ -43,7 +43,7 @@ export class HomePage {
         console.log(action.payload.val())
         storage.set('username',action.payload.val().name );
         this.name=action.payload.val().name
-        if (action.payload.val().category) {
+        if (action.payload.val().cat) {
           //seller direct to uploag
           if (action.payload.val().cat.length>0) {
             //seller direct to uploag

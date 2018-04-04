@@ -69,7 +69,7 @@ export class MessagePage {
     this.storage.get('name').then((val) => {
 
       this.storage.get('username').then((val2) => {
-
+        alert(val2)
         if (val=='not') //normal user
         {
           this.database.list('/chat/'+this.username+'/'+val2).push({
